@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body, html {
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .bg-image {
+      background-image: url('background.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      width: 100%;
+      position: relative;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: rgba(0, 0, 0, 0.7);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .navbar .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #00bfff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .nav-links a, .get-started {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #00bfff;
+    }
+
+    .get-started {
+      background-color: #00bfff;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-size: 15px;
+      border: none;
+      cursor: pointer;
+      color: black;
+    }
+
+    .get-started:hover {
+      background-color: #0099cc;
+    }
+
+    .welcome-text {
+      position: absolute;
+      top: 160px;
+      left: 110px;
+      color: white;
+      font-size: 35px;
+      font-weight: bold;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+    }
+
+    .intro-section {
+      position: absolute;
+      top: 280px;
+      left: 160px;
+      max-width: 600px;
+      color: white;
+      font-size: 18px;
+      line-height: 1.7;
+      text-align: justify;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+    }
+
+    .learn-more-container {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .learn-more-btn {
+      background-color: #00bfff;
+      color: #000;
+      border: none;
+      padding: 12px 30px;
+      font-size: 16px;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+    }
+
+    .learn-more-btn:hover {
+      background-color: #009acd;
+    }
+
+    section {
+      padding: 100px 60px;
+    }
+
+    #about {
+      background-color: #fff0f3;
+      color: #333;
+    }
+
+    #about h2, #portfolio h2, #contact h2 {
+      font-size: 32px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .about-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .about-image img {
+      width: 300px;
+      height: 300px;
+      border-radius: 60%;
+      object-fit: fill;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .about-content {
+      max-width: 600px;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .skills {
+      margin-top: 30px;
+    }
+
+    .skill {
+      margin-bottom: 15px;
+    }
+
+    .skill-bar {
+      background-color: #ddd;
+      height: 10px;
+      border-radius: 5px;
+    }
+
+    .skill-level {
+      height: 100%;
+      background-color: #00bfff;
+    }
+
+    .social-icons {
+      margin-top: 30px;
+    }
+
+    .social-icons a img {
+      width: 30px;
+      height: 30px;
+      margin-right: 15px;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icons a img:hover {
+      transform: scale(1.2);
+    }
+
+    #portfolio {
+      background-color: #fff0f3;
+    }
+
+    .portfolio-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 300px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .project-card img {
+      width: 100%;
+      border-radius: 10px;
+      height: 180px;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    #contact {
+      background-color:  #fff0f3;
+    }
+
+    .contact-form {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .contact-form button {
+      background-color: #00bfff;
+      color: white;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .contact-form button:hover {
+      background-color: #009acd;
+    }
+  </style>
+</head>
+<body>
+
+  <!--  Hero Section -->
+  <div class="bg-image">
+    <header class="navbar">
+      <div class="logo">Portfolio</div>
+      <nav class="nav-links">
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+        <a href="#contact"><button class="get-started">Get Started</button></a>
+      </nav>
+    </header>
+
+    <div class="welcome-text"><h1>Welcome to My Portfolio</h1></div>
+
+    <div class="intro-section">
+      <p>
+        I’m a creative UI/UX designer with a keen eye for detail. I design intuitive and visually appealing interfaces.
+        My passion lies in solving problems through design. Every pixel I place has a purpose and a story.
+        Let’s bring your ideas to life with style and function.
+      </p>
+      <div class="learn-more-container">
+        <a href="#about"><button class="learn-more-btn">Learn More</button></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="about-container">
+      <div class="about-image">
+        <img src="about.avif" alt="Profile Image" />
+      </div>
+      <div class="about-content">
+        <p>
+          I'm a passionate and innovative UI/UX designer with experience in crafting seamless and visually compelling user experiences.
+          My goal is to transform ideas into meaningful designs that balance aesthetics and functionality.
+        </p>
+
+        <div class="skills">
+          <h3>Skills</h3>
+          <div class="skill">
+            <span>UI/UX Design</span>
+            <div class="skill-bar"><div class="skill-level" style="width: 90%;"></div></div>
+          </div>
+          <div class="skill">
+            <span>Web Design</span>
+            <div class="skill-bar"><div class="skill-level" style="width: 80%;"></div></div>
+          </div>
+          <div class="skill">
+            <span>Figma & Adobe XD</span>
+            <div class="skill-bar"><div class="skill-level" style="width: 85%;"></div></div>
+          </div>
+        </div>
+
+        <div class="social-icons">
+          <a href="https://www.facebook.com/"><img src="facebook.png" alt="Facebook" /></a>
+          <a href="https://www.linkedin.com/feed/"><img src="linkedin.png" alt="LinkedIn" /></a>
+          <a href="https://www.instagram.com/"><img src="Instagram.jpg" alt="Instagram" /></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--Portfolio Section -->
+  <section id="portfolio">
+    <h2>My Work</h2>
+    <div class="portfolio-grid">
+      <div class="project-card">
+        <img src="landingpage.jpg" alt="Project 1">
+        <h3>Landing Page Design</h3>
+        <p>Clean, modern, and responsive UI for a product website.</p>
+      </div>
+      <div class="project-card">
+        <img src="Mobileapp.jpg" alt="Project 2">
+        <h3>Mobile App UI</h3>
+        <p>Intuitive mobile interface created in Figma for a finance app.</p>
+      </div>
+      <div class="project-card">
+        <img src="dashboard.jpg" alt="Project 3">
+        <h3>Dashboard UX</h3>
+        <p>Interactive dashboard design with focus on user engagement.</p>
+      </div>
+    </div>
+  </section>
+
+  <!--Contact Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <div class="contact-form">
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+</body>
+</html>
