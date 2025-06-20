@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Repair Services</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, #121212, #3a0b3a);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #ffcc00;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .service-card:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .service-card h2 {
+            color: #ffcc00;
+            font-size: 24px;
+        }
+
+        .price {
+            font-size: 20px;
+            color: #00ff99;
+            margin: 10px 0;
+        }
+
+        .offer {
+            font-size: 16px;
+            color: #ff6699;
+        }
+
+        .details {
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .offer-button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #ff5733;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+
+        .offer-button:hover {
+            background: #ff3300;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>📱 Mobile Phone Repair Services</h1>
+    
+    <div class="services-container">
+        <!-- Screen Replacement -->
+        <div class="service-card">
+            <h2>Screen Replacement</h2>
+            <p class="price">Starting from ₹2,500</p>
+            <p class="offer">🎉 10% OFF for first-time customers</p>
+            <p class="details">Fast replacement with **original-quality screens** in just 30-60 minutes.</p>
+            <a href="#" class="offer-button">View Offer</a>
+        </div>
+
+        <!-- Battery Replacement -->
+        <div class="service-card">
+            <h2>Battery Replacement</h2>
+            <p class="price">Starting from ₹1,200</p>
+            <p class="offer">🎉 Free battery health check</p>
+            <p class="details">Get long-lasting power with **premium lithium-ion batteries**.</p>
+            <a href="#" class="offer-button">View Offer</a>
+        </div>
+
+        <!-- Water Damage Repair -->
+        <div class="service-card">
+            <h2>Water Damage Repair</h2>
+            <p class="price">₹1,500 - ₹5,000</p>
+            <p class="offer">🎉 No repair, No charge!</p>
+            <p class="details">We clean, dry, and repair water-damaged phones with precision.</p>
+            <a href="#" class="offer-button">View Offer</a>
+        </div>
+
+        <!-- Charging Port Repair -->
+        <div class="service-card">
+            <h2>Charging Port Repair</h2>
+            <p class="price">Starting from ₹800</p>
+            <p class="offer">🎉 Free cleaning with repair</p>
+            <p class="details">Fix **slow or non-working charging ports** quickly.</p>
+            <a href="#" class="offer-button">View Offer</a>
+        </div>
+
+        <!-- Software & Performance Optimization -->
+        <div class="service-card">
+            <h2>Software Optimization</h2>
+            <p class="price">₹500 - ₹1,500</p>
+            <p class="offer">🎉 Free antivirus installation</p>
+            <p class="details">Speed up your phone and remove unwanted junk files.</p>
+            <a href="#" class="offer-button">View Offer</a>
+        </div>
+
+        <!-- Camera Repair -->
+        <div class="service-card">
+            <h2>Camera Repair & Replacement</h2>
+            <p class="price">Starting from ₹1,800</p>
+            <p class="offer">🎉 25% OFF on combo replacement</p>
+            <p class="details">Get your **blurry or broken camera lens** fixed with high-quality parts.</p>
+            <a href="#" class="offer-button">View Offer</a>
+        </div>
+
+        <!-- Speaker & Microphone Repair -->
+        <div class="service-card">
+            <h2>Speaker & Microphone Repair</h2>
+            <p class="price">Starting from ₹900</p>
+            <p class="offer">🎉 Free diagnostics</p>
+            <p class="details">Fix **low volume, distorted sound, or microphone issues**.</p>
+            <a href="#" class="offer-button">View Offer</a>
+        </div>
+    </div>
+
+    <br>
+
+    <!-- Special Offers Section -->
+    <div class="service-card">
+        <h2>🎁 Special Combo Offer</h2>
+        <p class="offer">Get **10% OFF** when you take two or more services together!</p>
+        <p class="details">🏡 **Doorstep Service Available** (extra ₹300 charge) | 💳 **Cash, Card, UPI, EMI accepted**</p>
+        <a href="#" class="offer-button">Claim Your Discount</a>
+    </div>
+
+</body>
+</html>
